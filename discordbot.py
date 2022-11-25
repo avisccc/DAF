@@ -18,4 +18,4 @@ async def on_message(message):
     if message.content == 'ping':
         await message.channel.send('pong')
 
-client.run('')#Token Here 
+client.run('MTA0NTM2NzY4MjUxOTgxNDI0NA.GFqgy2.56BU_yHb0V9Vm2yNFOOjsJnALf_Lqihbdym6LM')#Token Here 
