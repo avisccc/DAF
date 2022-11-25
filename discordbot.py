@@ -1,22 +1,21 @@
-#導入 Discord.py
 import discord
-#client 是我們與 Discord 連結的橋樑
-client = discord.Client()
+intents = discord.Intents.default()
+intents.guilds = True
+intents.members = True
+intents.messages = True
+intents.message_content = True
+client = discord.Client(command_prefix='?',intents=intents)
 
-#調用 event 函式庫
 @client.event
-#當機器人完成啟動時
 async def on_ready():
-    print('目前登入身份：', client.user)
+    print('Bot Online', client.user)
 
 @client.event
-#當有訊息時
 async def on_message(message):
-    #排除自己的訊息，避免陷入無限循環
     if message.author == client.user:
         return
-    #如果包含 ping，機器人回傳 pong
+    #嚙緘嚙瘦嚙稽嚙緣 ping嚙璀嚙踝蕭嚙踝蕭嚙瘡嚙稷嚙踝蕭 pong
     if message.content == 'ping':
         await message.channel.send('pong')
 
-client.run('你的機器人 TOKEN') #TOKEN 在剛剛 Discord Developer 那邊「BOT」頁面裡面
+client.run('MTA0NTM2NzY4MjUxOTgxNDI0NA.GSdXLH.IuFrN87tR_yL7aoWPiaMPepJ_k-g5DVlPSIZ4I') 
